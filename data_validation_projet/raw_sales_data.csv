@@ -1,0 +1,12 @@
+transaction_id,customer_id,order_date,product,quantity,price,state,email
+1001,C001,2025-02-14,cement,10,12.50,CA,customer1@email.com
+1002,C002,2025-02-15,cement,5,12.50,California,customer2@email.com
+1003,C003,2025/02/15,gravel,8,8.75,TX,customer3@email.com
+1004,C003,2025-02-16,sand,-4,6.50,TX,customer3@email.com
+1005,,2025-02-17,cement,7,12.50,CA,customer5@email
+1006,C006,2025-02-18,cement,3,12.50,ca,customer6@email.com
+1007,C007,2025-13-01,gravel,4,8.75,NV,customer7@email.com
+1008,C008,2025-02-19,gravel,1000,8.75,TX,customer8@email.com
+1009,C009,2025-02-20,sand,3,,CA,customer9@email.com
+1010,C010,2025-02-21,cement,five,12.50,CA,customer10@email.com
+1001,C001,2025-02-14,cement,10,12.50,CA,customer1@email.com
