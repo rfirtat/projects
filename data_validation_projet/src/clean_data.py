@@ -90,12 +90,12 @@ def validate_dates(df):
 
     initial_row_count = len(df)
 
-    invalid_rows = df[pd.to_datetime(df["order_date"], errors="coerce").isna()]
+    invalid_rows = df[pd.to_datetime(df["order_date"], format="%Y-%m-%d", errors="coerce").isna()]
 
     for date, tid in zip(invalid_rows["order_date"], invalid_rows["transaction_id"]):
         logging.info(f"Invalid date removed | date={date} | transaction_id={tid}")
 
-    df["order_date"] = pd.to_datetime(df["order_date"], errors="coerce")
+    df["order_date"] = pd.to_datetime(df["order_date"], format="%Y-%m-%d", errors="coerce")
     
     df = df[df["order_date"].notna()]
 
