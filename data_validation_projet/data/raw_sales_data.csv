@@ -1,12 +1,121 @@
 transaction_id,customer_id,order_date,product,quantity,price,state,email
-1001,C001,2025-02-14,cement,10,12.50,CA,customer1@email.com
-1002,C002,2025-02-15,cement,5,12.50,California,customer2@email.com
-1003,C003,2025/02/15,gravel,8,8.75,TX,customer3@email.com
-1004,C003,2025-02-16,sand,-4,6.50,TX,customer3@email.com
-1005,,2025-02-17,cement,7,12.50,CA,customer5@email
-1006,C006,2025-02-18,cement,3,12.50,ca,customer6@email.com
-1007,C007,2025-13-01,gravel,4,8.75,NV,customer7@email.com
-1008,C008,2025-02-19,gravel,1000,8.75,TX,customer8@email.com
-1009,C009,2025-02-20,sand,3,,CA,customer9@email.com
-1010,C010,2025-02-21,cement,five,12.50,CA,customer10@email.com
-1001,C001,2025-02-14,cement,10,12.50,CA,customer1@email.com
+1000,C002,2025-03-04,sand,,,CA,bademail
+1001,C039,2025-13-01,sand,15,31.43,CA,user40@email.com
+1002,C022,2025-02-25,gravel,,,texas,user186@email.com
+1003,C008,2025-04-07,brick,40,39.36,California,user11@email.com
+1004,C019,2025-03-01,gravel,41,20.45, Nevada ,user68@email.com
+1005,C005,2025-02-13,cement,25,92.91,California,user196@email.com
+1006,C015,2025-03-22,cement,37,34.89,NY,user164@email.com
+1007,C017,2025-07-10,gravel,28,42.94,California,user35@email.com
+1008,C006,2025-01-29,wood,28,41.55,NY,user141@email.com
+1009,C001,2025-01-30,sand,50,15.6,FL,user@email
+1010,C017,2025-07-15,steel,20,53.23,California,bademail
+1011,C034,2025-06-03,cement,five,84.01,texas,user61@email.com
+1012,C006,2025/45/12,sand,9,94.95,NV,user155@email.com
+1013,C014,2025-07-13,cement,26,66.74,NY,user115@email.com
+1014,C015,2025-13-01,cement,1,-10,California,user@email
+1015,C005,2025-03-13,cement,47,59.25,NY,user121@email.com
+1016,C013,not_a_date,gravel,47,-10,CA,user86@email.com
+1017,C007,2025-02-18,cement,18,88.08,TX,user140@email.com
+1018,C035,2025-01-24,cement,32,87.14,CA,user@email
+1019,C017,2025-07-20,gravel,47,57.8,NY,user@domain
+1020,C004,2025-05-19,brick,,92.34,NV,test@site
+1021,C012,2025-13-01,cement,37,61.48,TX,user149@email.com
+1022,C021,2025-02-22,gravel,26,,NY,user192@email.com
+1023,C001,2025-05-25,cement,33,93.66,TX,user94@email.com
+1024,C029,2025-06-30,sand,43,33.44,TX,user34@email.com
+1025,C007,2025-02-09,sand,22,65.25,texas,user64@email.com
+1026,C004,2025/45/12,cement,-1,29.89,NY,user109@email.com
+1027,C008,not_a_date,sand,five,19.07,NV,user@domain
+1028,C003,2025-02-23,sand,,43.61,NV,user60@email.com
+1029,C012,2025-01-07,brick,27,87.09,California,user179@email.com
+1030,C003,2025-02-26,CEMENT ,15,67.7,FL,user17@email.com
+1031,C018,2025-05-11,sand,2,,NV,user67@email.com
+1009,C028,2025-03-22,sand,,9.22,FL,test@site
+1033,C013,2025-01-18,gravel,43,73.38,texas,user170@email.com
+1034,C026,2025-05-22,CEMENT ,25,90.77,texas,user0@email.com
+1035,C014,2025-05-29,gravel,29,53.56,NV,user72@email.com
+1036,C040,2025-07-12,gravel,13,-10,California,user156@email.com
+1037,C005,2025-06-11,sand,32,19.02,CA,user197@email.com
+1038,C028,2025-06-28,cement,8,81.13, Nevada ,user113@email.com
+1039,C033,2025-05-21,cement,31,76.42,texas,user133@email.com
+1040,C016,2025-01-20,cement,21,12.65,NV,user177@email.com
+1041,C014,2025/45/12,gravel,14,42.0,CA,user195@email.com
+1042,C031,2025/45/12,gravel,27,74.79,California,user69@email.com
+1043,C002,2025-06-21,gravel,30,98.17,CA,user151@email.com
+1044,C002,2025/45/12,CEMENT ,17,25.11, Nevada ,user97@email.com
+1045,C027,2025-01-21,sand,23,11.52,CA,user63@email.com
+1046,C002,2025-03-03,steel,14,29.34, Nevada ,test@site
+1047,C008,2025-02-11,cement,20,91.26,FL,user183@email.com
+1048,C038,2025-06-10,sand,44,16.5,CA,user109@email.com
+1049,C005,2025-03-29,CEMENT ,7,39.41,NY,user111@email.com
+1050,C034,2025-03-11,sand,30,74.45,texas,user62@email.com
+1051,C006,2025-04-26,gravel,43,7.73, Nevada ,bademail
+1052,C017,2025-06-02,gravel,34,13.13,FL,user194@email.com
+1053,C031,2025-05-06,cement,-1,28.11, Nevada ,user135@email.com
+1054,C036,2025-06-29,gravel,8,34.98,NV,user@.com
+1055,C038,2025-05-15,cement,19,22.05,CA,user32@email.com
+1056,C004,2025-06-28,sand,32,-10,texas,user112@email.com
+1057,C004,2025-05-03,steel,5,70.21,NV,test@site
+1058,C006,2025-01-31,gravel,40,54.64,NY,user76@email.com
+1059,C028,2025-06-08,steel,14,30.14,TX,bademail
+1060,C011,2025/45/12,gravel,15,31.86,NY,bademail
+1061,C038,2025-02-20,sand,10,83.53,TX,user@domain
+1062,C037,2025-04-23,brick,18,51.91,TX,user110@email.com
+1063,C039,2025-01-24,sand,37,6.97,texas,user195@email.com
+1064,C031,2025-04-24,cement,28,51.71,TX,user104@email.com
+1065,C007,2025-03-26,gravel,26,57.26,NY,user@domain
+1066,C026,2025-01-01,sand,4,39.37,NY,user194@email.com
+1004,C036,2025-03-15,sand,2,62.84,California,user79@email.com
+1068,C036,2025-02-27,cement,8,19.63,texas,user69@email.com
+1069,C031,2025-03-04,cement,39,88.54,TX,user106@email.com
+1070,C033,2025-01-01,gravel,38,51.52,NV,user123@email.com
+1071,C036,2025-04-07,gravel,45,41.38,FL,user@.com
+1072,C025,2025-06-19,sand,32,16.99, Nevada ,user112@email.com
+1073,C030,2025-13-01,sand,5,97.07, Nevada ,user101@email.com
+1074,C022,2025-05-17,gravel,49,56.4,TX,user175@email.com
+1075,C015,2025-04-22,sand,7,70.93,CA,user@email
+1076,C024,2025-03-04,sand,12,12.5,FL,user61@email.com
+1077,C038,2025-04-29,gravel,1,49.2,texas,user40@email.com
+1005,C038,2025-04-19,gravel,13,86.07,TX,user146@email.com
+1079,C019,2025-03-17,CEMENT ,37,78.94,CA,user190@email.com
+1080,C019,2025-02-28,gravel,13,69.39,NV,user160@email.com
+1081,C020,2025-01-09,sand,five,44.47,California,test@site
+1082,C024,2025-03-11,gravel,31,33.04, Nevada ,user119@email.com
+1083,C010,2025-02-27,sand,26,81.44, Nevada ,user@.com
+1008,C008,2025-06-22,gravel,41,15.29,California,user158@email.com
+1085,C036,2025-06-06,cement,30,33.71,FL,user@email
+1086,C020,2025-01-30, gravel,,95.19,FL,user186@email.com
+1087,C027,2025-05-06,gravel,five,47.25,California,user25@email.com
+1088,C024,2025-06-15,gravel,8,83.3,TX,user164@email.com
+1089,C002,2025/45/12,cement,14,ten,California,user59@email.com
+1090,C010,2025-06-02,wood,35,21.58,CA,user@domain
+1091,C016,2025-01-05,steel,,75.84,NY,user92@email.com
+1092,C007,2025-02-26,cement,43,48.51,CA,user@.com
+1093,C028,2025-05-06,gravel,-5,19.09,NV,user162@email.com
+1094,C021,2025-06-02,gravel,28,-10,California,user58@email.com
+1095,C030,2025-07-06,CEMENT ,17,19.5,NY,user@email
+1096,C007,2025-04-06,sand,,68.65,FL,user170@email.com
+1097,C028,2025-07-04,brick,23,ten,NV,user57@email.com
+1098,C023,2025-04-05,brick,28,97.58,CA,user168@email.com
+1099,C018,2025/45/12,gravel,23,ten,FL,user@email
+1100,C034,2025-04-18,cement,47,94.43,TX,user39@email.com
+1101,C040,2025-13-01,sand,39,30.95,TX,user28@email.com
+1102,C038,2025-06-20,cement,39,ten,texas,user196@email.com
+1103,C017,2025-01-31,CEMENT ,25,26.86, Nevada ,user@email
+1104,C030,2025-03-22,sand,41,15.94,CA,user43@email.com
+1105,C040,2025-06-26,cement,7,60.94,TX,user79@email.com
+1106,C015,2025-02-13,steel,13,38.19,NV,user37@email.com
+1107,C012,2025-07-14,cement,50,49.08,NY,user144@email.com
+1108,C040,2025-06-10,gravel,,80.65,CA,user18@email.com
+1109,C029,2025/45/12,cement,6,53.17,NY,user189@email.com
+1110,C029,2025-05-27,gravel,33,10.88,TX,user87@email.com
+1111,C006,2025-02-14,CEMENT ,34,20.08, Nevada ,user99@email.com
+1112,C022,2025-01-14,sand,22,,texas,user168@email.com
+1113,C039,2025-03-27,wood,20,71.36,FL,user@email
+1114,C025,2025-03-26,sand,48,91.68,TX,user108@email.com
+1115,C002,2025-02-16,gravel,32,100.0,NV,user@email
+1116,C035,2025-05-15,brick,40,,NV,test@site
+1117,C011,2025-01-12,sand,29,76.48,NY,user61@email.com
+1118,C031,2025-02-19,sand,30,78.92,FL,user51@email.com
+1119,C009,2025-01-14,gravel,7,54.01,TX,user195@email.com

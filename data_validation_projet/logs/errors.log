@@ -1,0 +1,39 @@
+2026-03-18 19:25:56,963 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 19:29:00,300 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 19:29:25,721 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 19:29:39,356 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 19:29:39,357 - Invalid date removed | date = NaT | transaction_id = 1003
+2026-03-18 19:29:39,357 - Invalid date removed | date = NaT | transaction_id = 1007
+2026-03-18 19:31:16,291 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 19:31:16,292 - Invalid date removed | date = 2025/02/15 | transaction_id = 1003
+2026-03-18 19:31:16,293 - Invalid date removed | date = 2025-13-01 | transaction_id = 1007
+2026-03-18 19:38:01,424 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 19:38:01,427 - Invalid date removed | date = 2025/02/15 | transaction_id = 1003
+2026-03-18 19:38:01,427 - Invalid date removed | date = 2025-13-01 | transaction_id = 1007
+2026-03-18 19:41:07,310 - Invalid price removed | price = nan | transaction_id = 1009
+2026-03-18 19:41:07,311 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 19:41:07,313 - Invalid date removed | date = 2025/02/15 | transaction_id = 1003
+2026-03-18 19:41:07,313 - Invalid date removed | date = 2025-13-01 | transaction_id = 1007
+2026-03-18 19:42:23,401 - Invalid quantity removed | quantity = five | transaction_id = 1010
+2026-03-18 19:42:23,401 - Invalid price removed | price = nan | transaction_id = 1009
+2026-03-18 19:42:23,403 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 19:42:23,404 - Invalid date removed | date = 2025/02/15 | transaction_id = 1003
+2026-03-18 19:42:23,404 - Invalid date removed | date = 2025-13-01 | transaction_id = 1007
+2026-03-18 19:54:17,772 - Duplicate record removed | transaction_id = 1001
+2026-03-18 19:54:17,775 - Invalid quantity removed | quantity = five | transaction_id = 1010
+2026-03-18 19:54:17,776 - Invalid price removed | price = nan | transaction_id = 1009
+2026-03-18 19:54:17,778 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 19:54:17,779 - Invalid date removed | date = 2025/02/15 | transaction_id = 1003
+2026-03-18 19:54:17,779 - Invalid date removed | date = 2025-13-01 | transaction_id = 1007
+2026-03-18 20:00:58,122 - Duplicate record removed | transaction_id = 1001
+2026-03-18 20:00:58,126 - Invalid quantity removed | quantity = five | transaction_id = 1010
+2026-03-18 20:00:58,127 - Invalid price removed | price = nan | transaction_id = 1009
+2026-03-18 20:00:58,128 - Invalid email removed | email = customer5@email | transaction_id = 1005
+2026-03-18 20:00:58,129 - Invalid date removed | date = 2025/02/15 | transaction_id = 1003
+2026-03-18 20:00:58,129 - Invalid date removed | date = 2025-13-01 | transaction_id = 1007
+2026-03-18 20:05:57,787 - Duplicate record removed | transaction_id=1001
+2026-03-18 20:05:57,791 - Invalid quantity removed | quantity=five | transaction_id=1010
+2026-03-18 20:05:57,792 - Invalid price removed | price=nan | transaction_id=1009
+2026-03-18 20:05:57,793 - Invalid email removed | email=customer5@email | transaction_id=1005
+2026-03-18 20:05:57,794 - Invalid date removed | date=2025/02/15 | transaction_id=1003
+2026-03-18 20:05:57,794 - Invalid date removed | date=2025-13-01 | transaction_id=1007
