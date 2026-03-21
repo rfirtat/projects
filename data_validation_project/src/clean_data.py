@@ -20,22 +20,28 @@ logging.basicConfig(
 
 def validate_duplicates(df):
     duplicates = df.duplicated(subset="transaction_id")
+
     for tid in set(df["transaction_id"][duplicates]):
         logging.info(f"Duplicate record removed | transaction_id={tid}")
     print(f"Duplicate rows removed: {duplicates.sum()}")
+
     df = df.drop_duplicates(subset="transaction_id", keep="first")
     return df
 
 
 def validate_quantity(df):
     initial_row_count = len(df)
-    invalid_rows = df[pd.to_numeric(df["quantity"], errors="coerce").isna()]
+
+    converted_quantity = pd.to_numeric(df["quantity"], errors="coerce")
+    invalid_rows = df[converted_quantity.isna() | (converted_quantity <= 0)]
     for quantity, tid in zip(invalid_rows["quantity"], invalid_rows["transaction_id"]):
         logging.info(
             f"Invalid quantity removed | quantity={quantity} | transaction_id={tid}"
         )
-    df["quantity"] = pd.to_numeric(df["quantity"], errors="coerce")
+
+    df["quantity"] = converted_quantity
     df = df[df["quantity"] > 0]
+
     removed_rows = initial_row_count - len(df)
     print(f"Invalid quantities removed: {removed_rows}")
     return df
@@ -43,11 +49,15 @@ def validate_quantity(df):
 
 def validate_price(df):
     initial_row_count = len(df)
-    invalid_rows = df[pd.to_numeric(df["price"], errors="coerce").isna()]
+
+    converted_price = pd.to_numeric(df["price"], errors="coerce")
+    invalid_rows = df[converted_price.isna() | (converted_price <= 0)]
     for price, tid in zip(invalid_rows["price"], invalid_rows["transaction_id"]):
         logging.info(f"Invalid price removed | price={price} | transaction_id={tid}")
-    df["price"] = pd.to_numeric(df["price"], errors="coerce")
+
+    df["price"] = converted_price
     df = df[df["price"] > 0]
+
     removed_rows = initial_row_count - len(df)
     print(f"Invalid prices removed: {removed_rows}")
     return df
@@ -55,10 +65,13 @@ def validate_price(df):
 
 def validate_email(df):
     initial_row_count = len(df)
+
     invalid_rows = df[~df["email"].str.match(EMAIL_PATTERN)]
     for email, tid in zip(invalid_rows["email"], invalid_rows["transaction_id"]):
         logging.info(f"Invalid email removed | email={email} | transaction_id={tid}")
+
     df = df[df["email"].str.match(EMAIL_PATTERN)]
+
     removed_rows = initial_row_count - len(df)
     print(f"Invalid email removed: {removed_rows}")
     return df
@@ -66,15 +79,18 @@ def validate_email(df):
 
 def validate_dates(df):
     initial_row_count = len(df)
+
     invalid_rows = df[
         pd.to_datetime(df["order_date"], format=DATE_FORMAT, errors="coerce").isna()
     ]
     for date, tid in zip(invalid_rows["order_date"], invalid_rows["transaction_id"]):
         logging.info(f"Invalid date removed | date={date} | transaction_id={tid}")
+
     df["order_date"] = pd.to_datetime(
         df["order_date"], format=DATE_FORMAT, errors="coerce"
     )
     df = df[df["order_date"].notna()]
+
     removed_rows = initial_row_count - len(df)
     print(f"Invalid dates removed: {removed_rows}")
     return df
@@ -82,14 +98,17 @@ def validate_dates(df):
 
 def validate_product(df, products_pd):
     initial_row_count = len(df)
+
     valid_products = set(products_pd["product"].str.strip().str.lower())
     invalid_rows = df[~df["product"].str.strip().str.lower().isin(valid_products)]
     for product, tid in zip(invalid_rows["product"], invalid_rows["transaction_id"]):
         logging.info(
             f"Invalid product removed | product={product} | transaction_id={tid}"
         )
+    
     df["product"] = df["product"].str.strip().str.lower()
     df = df[df["product"].isin(valid_products)]
+
     removed_rows = initial_row_count - len(df)
     print(f"Invalid products removed: {removed_rows}")
     return df
@@ -97,13 +116,16 @@ def validate_product(df, products_pd):
 
 def standardize_state(df):
     initial_row_count = len(df)
+
     invalid_rows = df[
         ~df["state"].str.strip().str.upper().replace(STATE_MAP).isin(VALID_STATES)
     ]
     for state, tid in zip(invalid_rows["state"], invalid_rows["transaction_id"]):
         logging.info(f"Invalid state removed | state={state} | transaction_id={tid}")
+
     df["state"] = df["state"].str.strip().str.upper().replace(STATE_MAP)
     df = df[df["state"].isin(VALID_STATES)]
+    
     removed_rows = initial_row_count - len(df)
     print(f"Invalid states removed: {removed_rows}")
     return df
