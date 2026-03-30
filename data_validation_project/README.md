@@ -165,19 +165,6 @@ This project demonstrates several key data and software development concepts:
 
 ---
 
-## Potential Future Improvements
-
-Possible extensions to this project include:
-
-* Adding command-line arguments for input/output files
-* Adding automated unit tests
-* Adding configuration files for validation rules
-* Expanding the dataset size
-* Integrating with a database or API source
-* Implementing automated reporting of validation results
-
----
-
 ## Author
 
 This project was created as a learning exercise to demonstrate Python data validation techniques and basic data pipeline design.
