@@ -27,7 +27,7 @@ User ZIP Code
 Zippopotam API
 (ZIP → latitude/longitude)
       ↓
-Weather API
+Open-Meteo API
 (latitude/longitude → weather data)
       ↓
 Data transformation
@@ -90,11 +90,14 @@ python pipeline.py
 Example interaction:
 
 ```
-Enter a US ZIP code: 91765
-Fetching coordinates...
-Fetching weather data...
-Saving results to database...
-Done.
+Enter a US ZIP code: 92821
+
+Data entered into database
+--------------------------
+city: Brea
+temperature: 19.9
+windspeed: 9.2
+weathercode: 3
 ```
 
 To view stored records:
@@ -111,9 +114,9 @@ The SQLite database stores weather data retrieved from the API.
 
 Example record:
 
-| Temperature | Wind Speed | Weather Code |
-| ----------- | ---------- | ------------ |
-| 18.2        | 5.3        | 2            |
+| City | Temperature | Wind Speed | Weather Code |
+| ---- | ----------- | ---------- | ------------ |
+| Brea | 19.9        | 9.2        | 3            |
 
 ---
 
@@ -128,7 +131,7 @@ Example record:
 APIs used:
 
 * Zippopotam API (ZIP → coordinates)
-* Weather API (coordinates → weather data)
+* Open-Meteo API (coordinates → weather data)
 
 ---
 
@@ -143,17 +146,6 @@ This project demonstrates several important backend/data engineering skills:
 * building a **data pipeline**
 * organizing a **modular Python project**
 * using **SQLite for data persistence**
-
----
-
-## Possible Future Improvements
-
-* add logging for API requests
-* implement better error handling
-* allow ZIP code input via command-line arguments
-* store additional weather fields
-* add automated tests
-* schedule pipeline runs
 
 ---
 
