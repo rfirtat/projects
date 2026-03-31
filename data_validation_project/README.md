@@ -5,7 +5,7 @@
 This project implements a simple **data validation and cleaning pipeline** using Python and pandas.
 The goal is to simulate how real-world data pipelines validate, clean, and log incoming data before it is used downstream.
 
-The script reads raw transaction data from a CSV file, applies multiple validation rules, removes invalid records, and writes a cleaned dataset to a new file.
+The script reads raw transaction data from a CSV file, applies multiple validation rules, removes and logs invalid records, and writes a cleaned dataset to a new file.
 
 Invalid records are logged to a log file for auditing and debugging purposes.
 
