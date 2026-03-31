@@ -1,3 +1,2 @@
 venv/
-src/first_draft.py
-src/pycache
+__pycache__/
