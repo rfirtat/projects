@@ -10,6 +10,9 @@ def connect_db():
 
 
 def create_table(conn):
+    """
+    Create the weather_data table if it does not exist.
+    """
     # Create cursor object - used to execute SQL commands
     cursor = conn.cursor()
 
@@ -29,7 +32,18 @@ def create_table(conn):
     conn.commit()
 
 
-def insert_weather(conn, city, temperature, windspeed, weathercode):
+def insert_weather(conn: str, city: str, temperature: float, windspeed: float, weathercode: int):
+    """
+    Insert a weather record into the database.
+
+    Parameters
+    ----------
+    conn : str
+    city : str
+    temperature : float
+    windspeed : float
+    weathercode : int
+    """
     # Create cursor object
     cursor = conn.cursor()
 

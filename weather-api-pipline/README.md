@@ -119,6 +119,22 @@ Example record:
 | Brea | 19.9        | 9.2        | 3            |
 
 ---
+## Dependencies
+
+This project uses the following Python libraries:
+
+* requests
+* sqlite3 (built-in with Python)
+* tabulate
+
+Dependencies can be installed using:
+
+```
+pip install -r requirements.txt
+```
+
+
+
 
 ## Technologies Used
 

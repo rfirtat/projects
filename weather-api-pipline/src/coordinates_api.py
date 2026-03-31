@@ -10,36 +10,39 @@ def get_coordinates(zipcode: str) -> tuple[str, float, float]:
 
     Returns
     -------
-        tuple: (city name, latitude, longitude).
+        tuple[str, float, float]: (city name, latitude, longitude).
     """
 
-    # Assign response object and convert from JSON to python dict
+    # Assign response object and check for errors
     try:
-        r = requests.get(f"https://api.zippopotam.us/us/{zipcode}", timeout=5)
-        r.raise_for_status()
+        response = requests.get(f"https://api.zippopotam.us/us/{zipcode}", timeout=5)
+        response.raise_for_status()
     except requests.exceptions.HTTPError:
         raise ValueError(f"Invalid ZIP code: {zipcode}")
     except requests.exceptions.Timeout:
         raise ValueError("Request timed out")
-    except requests.exceptions.RequestException:
-        raise ValueError("Network error occurred")
-    response = r.json()
+    except requests.exceptions.RequestException as e:
+        raise ValueError(f"Network error occurred: {e}")
+    
+    # Convert JSON to python dict
+    data = response.json()
 
-    # Parse through JSON to extract longitude and latitude as floats
+    # Parse through JSON to extract longitude and latitude as floats and city name
+    # Assign places list to variable, raise error if empty
+    places = data.get("places")
+    if not places:
+        raise ValueError(f"No location found for ZIP code: {zipcode}")
     # By default only coordinates from first city in zipcode list are extracted
-    city = response["places"][0]["place name"]
-    lat = float(response["places"][0]["latitude"])
-    lon = float(response["places"][0]["longitude"])
+    place = places[0]
+    # Extract information from place dictionary
+    city = place.get("place name")
+    lat = place.get("latitude")
+    lon = place.get("longitude")
+    # Check for incomplete data
+    if city is None or lat is None or lon is None:
+        raise ValueError("Incomplete data received from API")
+    # Ensure correct typing of lat/lon
+    lat = float(lat)
+    lon = float(lon)
 
     return city, lat, lon
-
-
-
-def main():
-    #city, lat, lon, response = get_coordinates(91765)
-    #print(json.dumps(response, indent=4))
-    pass
-
-
-if __name__ == "__main__":
-    main()

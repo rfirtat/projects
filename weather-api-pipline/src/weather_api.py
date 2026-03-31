@@ -10,35 +10,52 @@ def get_weather(latitude: float, longitude: float) -> dict:
 
     Parameters
     ----------
-        latitude, longitude: Coordinates to look up.
+        latitude : float
+        longitude : float
+            Coordinates to look up
 
     Returns
     -------
-        dict: {
+        dict 
+        {
             "temperature": current temperature,
             "windspeed": current windspeed,
             "weathercode": current weathercode
-        }.
+        }
     """
-    # Put lat/long into structured dict for use with .get method
+    # Query parameters for API request
     params = {
         "latitude": latitude,
         "longitude": longitude,
         "current_weather": True
     }
 
-    # Use .get() with URL and params to obtain response object
-    response = requests.get(BASE_URL, params=params)
-    response.raise_for_status()
+    # Assign response object and check for errors
+    try:
+        response = requests.get(BASE_URL, params=params, timeout=5)
+        response.raise_for_status()
+    except requests.exceptions.Timeout:
+        raise ValueError("Weather API request timed out")
+    except requests.exceptions.RequestException as e:
+        raise ValueError(f"Weather API error: {e}")
 
     # Convert JSON response to python dict for parsing
+    # Open-Meteo nests current data under "current_weather"
     data = response.json()
-    # Asign "current_weather" value (dict) to a variable
-    weather = data["current_weather"]
-
+    # Assign current_weather dict to variable, raise error if empty
+    weather = data.get("current_weather")
+    if not weather:
+        raise ValueError("No weather data returned from API")
+    # Extract values of interest from dict
+    temperature = weather.get("temperature")
+    windspeed = weather.get("windspeed")
+    weathercode = weather.get("weathercode")
+    # Check for incomplete data
+    if temperature is None or windspeed is None or weathercode is None:
+        raise ValueError("Incomplete weather data received")    
     # Return specific values of interest from weather dict
     return {
-        "temperature": weather["temperature"],
-        "windspeed": weather["windspeed"],
-        "weathercode": weather["weathercode"]
+        "temperature": temperature,
+        "windspeed": windspeed,
+        "weathercode": weathercode
     }
